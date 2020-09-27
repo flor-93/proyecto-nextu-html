@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registro</title>
+        <meta charset="UTF-8"/>
+
+        <script>
+            function comprobarClave(event){
+                clave1 = document.querySelector('input[name="clave1"]').value;
+                clave2 = document.querySelector('input[name="clave2"]').value;
+            
+                if (clave1 !== clave2){
+                    event.preventDefault();
+                   alert("Las dos claves son distintas...");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div style="float: left;"><img src="./images/logo.svg" /></div>
+            <div style="margin: 0; line-height: 70px;"><h1>TuServicio.com</h1></div>
+            
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contactenos.html">Contáctenos</a></li>
+                <li><a href="inicio-de-sesion.html">Inicio de Sesión</a></li>
+                <li>Registro</li>
+            </ul>
+    </header>
+
+    <main>
+        <hr/>
+        <h2>Registro</h2>
+        <form onsubmit="comprobarClave(event);">
+            <fieldset>
+                <legend>Nuevo usuario</legend>
+                <p>
+                    <label for="email">Email*</label><br/>
+                    <input type="email" name="email" required>
+                </p>
+    
+                <p>
+                    <label for="contraseña">Contraseña*</label><br/>
+                    <input type="password" name="clave1" required>
+                </p>
+
+                <p>
+                    <label for="contraseña">Confirmación de contraseña*</label><br/>
+                    <input type="password" name="clave2" required>
+                </p>
+
+                <p>Donde nos vió: <br/>
+                    <input type="radio" name="genero" id="masculino">
+                    <label for="masculino">Google</label>
+                    <input type="radio" name="genero" id="femenino">
+                    <label for="femenino">Otro</label>
+                </p>
+
+                <p>
+                    <label for="comentarios">Comentario*</label><br/>
+                    <textarea name="comentarios" cols="30" rows="10" required></textarea>
+                </p>
+
+                <p>
+                    <input type="checkbox" name="terminos" required>
+                    <label for="terminos">Acepto los términos y condiciones*</label>
+                </p>
+    
+                <p>
+                    <input type="submit" value="Continuar" name="continuar">
+                </p>
+    
+            </fieldset>
+        </form> 
+    </main>
+
+<footer>
+    <hr/>
+    <p style="font: 5px;">Derechos Reservados</p>
+</footer>
+
+    </body>
+</html>
